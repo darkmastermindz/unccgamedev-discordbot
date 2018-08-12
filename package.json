@@ -1,0 +1,20 @@
+{
+  "name": "unccgamedev-discordbot",
+  "version": "1.0.0",
+  "description": "Intelligent discord-bot made for UNCC Game Development student envolvement",
+  "main": "index.js",
+  "repository": "https://github.com/darkmastermindz/unccgamedev-discordbot.git",
+  "author": "Hansel Wei <darkmastermindz@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "discord.js": "^11.4.0",
+    "eslint": "^5.3.0",
+    "express": "^4.16.3",
+    "firebase-admin": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.8",
+    "tslint": "^5.11.0"
+  }
+}
