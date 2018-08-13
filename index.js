@@ -45,33 +45,6 @@ bot.on("message", async message => {
     };
   }
 
-  // if(!coins[message.author.id]){
-  //   coins[message.author.id] = {
-  //     coins: 0
-  //   };
-  // }
-
-  // let coinAmt = Math.floor(Math.random() * 15) + 1;
-  // let baseAmt = Math.floor(Math.random() * 15) + 1;
-  // console.log(`${coinAmt} ; ${baseAmt}`);
-  //
-  // if(coinAmt === baseAmt){
-  //   coins[message.author.id] = {
-  //     coins: coins[message.author.id].coins + coinAmt
-  //   };
-  // fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
-  //   if (err) console.log(err)
-  // });
-  // let coinEmbed = new Discord.RichEmbed()
-  // .setAuthor(message.author.username)
-  // .setColor("#0000FF")
-  // .addField("💸", `${coinAmt} coins added!`);
-  //
-  // message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
-  // }
-
-  xpRandom(message);
-
   let prefix = prefixes[message.guild.id].prefixes;
   if(!message.content.startsWith(prefix)) return;
 
@@ -87,6 +60,8 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
+  console.log(cmd + " command used by " + message.author.id + " with args: " + args)
+
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
 
@@ -95,42 +70,5 @@ bot.on("message", async message => {
   }, cdseconds * 1000)
 
 });
-
-
-  function xpRandom(message){
-
-  //** XP Stuff **/
-  let xpAdd = Math.floor(Math.random() * 7) + 8;
-  console.log(xpAdd);
-
-  //reading from xp.json, if not found create entry
-  if(!xp[message.author.id]){
-    xp[message.author.id] = {
-      xp: 0,
-      level: 1
-    };
-  }
-
-  let curxp = xp[message.author.id].xp;
-  let curlvl = xp[message.author.id].level;
-  let nxtLvl = Math.ceil(Math.sqrt(Math.abs(xp[message.author.id].level))) * 300;
-  xp[message.author.id].xp =  curxp + xpAdd;
-
-  if(nxtLvl <= xp[message.author.id].xp){
-    xp[message.author.id].level = curlvl + 1;
-    let lvlup = new Discord.RichEmbed()
-    .setTitle("Level Up!")
-    .setColor("#00703C")
-    .addField("New Level", curlvl + 1);
-
-    message.channel.send(lvlup).then(msg => {msg.delete(5000)});
-  }
-
-  fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
-    if(err) console.log(err)
-  });
-
-  return void(0);
-}
 
 bot.login(token.value);

@@ -15,7 +15,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("Reason", reason);
 
   //return message.channel.send(reportEmbed); //send msg in current channel
-  let reportsChannel = message.guild.channels.find(`name`, "reports") //TODO: set reports channel
+  let reportsChannel = message.guild.channels.find(`name`, "incidents") //TODO: set reports channel
   if(!reportsChannel) return message.channel.send("Couldn't find reports channel.");
 
   message.delete().catch(O_o=>{}); //delete previous message (input command)
