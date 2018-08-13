@@ -3,6 +3,7 @@ const token = require("./token.json"); // Create a json file with {value: yourTo
 const Discord = require("discord.js");
 const fs = require("fs");
 
+let statsController = require("./utils/statsController.js");
 let coins = require("./coins.json");
 let xp = require("./xp.json");
 let cooldown = new Set();
