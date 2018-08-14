@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.randomXP = (message) => {
     //** XP Stuff **/
     let xpAdd = Math.floor(Math.random() * 7) + 8;
     console.log("Added" + xpAdd +"XP to "+ message.author.id);

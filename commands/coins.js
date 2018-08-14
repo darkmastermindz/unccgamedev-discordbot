@@ -11,7 +11,6 @@ module.exports.run = async (bot, message, args) => {
 
   let uCoins = coins[message.author.id].coins;
 
-
   let coinEmbed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#00FF00")
