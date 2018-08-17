@@ -1,22 +1,21 @@
 const Discord = require("discord.js");
-let coins = require("../coins.json");
+let stats = require("../stats.json");
+const exceptions = require("../utils/exceptions.js");
 
 module.exports.run = async (bot, message, args) => {
-  //!coins
-  if(!coins[message.author.id]){
-    coins[message.author.id] = {
-      coins: 0
-    };
+
+  if(!stats[message.author.id]){
+    exceptions.cantFindStats(message.author.id)
   }
 
-  let uCoins = coins[message.author.id].coins;
+  let uCoins = stats[message.author.id].coins;
 
   let coinEmbed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#00FF00")
   .addField("💸", uCoins);
 
-  message.channel.send(coinEmbed);//.then(msg => {msg.delete(5000)});
+  message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 
 }
 
