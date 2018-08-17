@@ -1,8 +1,14 @@
 const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
+  
+  message.delete(1000).catch(O_o=>{}); //delete previous message (input command)
+
   let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!rUser) return message.channel.send("Couldn't find user.");
+  if(!rUser) return message.channel.send("Couldn't find user.").then(msg => {
+    msg.delete(10000)
+  })
+  .catch(O_o=>{});
   let reason = args.join(" ").slice(22);
 
   let reportEmbed = new Discord.RichEmbed()
@@ -17,8 +23,6 @@ module.exports.run = async(bot, message, args) => {
   //return message.channel.send(reportEmbed); //send msg in current channel
   let reportsChannel = message.guild.channels.find(`name`, "incidents") //TODO: set reports channel
   if(!reportsChannel) return message.channel.send("Couldn't find reports channel.");
-
-  message.delete().catch(O_o=>{}); //delete previous message (input command)
 
   return reportsChannel.send(reportEmbed);
 }
