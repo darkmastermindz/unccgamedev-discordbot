@@ -3,7 +3,7 @@ Discord Bot made to manage UNCC Game Developer's Discord @UNCCGameDevelopers
 
 ## Getting Started
 
-1. Clone repository
+1. Fork repository
 
 2. Create a app bot token key at [Discord Developers](https://discordapp.com/developers/applications/me)
 
