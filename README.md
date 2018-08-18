@@ -13,7 +13,7 @@ Discord Bot made to manage UNCC Game Developer's Discord @UNCCGameDevelopers
   "value" : "yourtokenvaluehere"
 }
 ```
-3. Invite Bot to test on your own server or ask @UNCCGameDevelopers to send you an invite to our bot test server.
+3. Invite Bot to test on your own server or ask @UNCCGameDevelopers to send you an invite to their bot test server.
 
 4. Run the following in terminal
 
