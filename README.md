@@ -20,6 +20,8 @@ Discord Bot made to manage UNCC Game Developer's Discord @UNCCGameDevelopers
 $ node index.js
 ```
 
+4. Any feature changes, create a feature branch and submit a PR. Keep this one feature / fix per PR. See guidelines for the "perfect pull request" here: https://medium.com/@hugooodias/the-anatomy-of-a-perfect-pull-request-567382bb6067
+
 ## Commands
 - addrole.js - Add Role to user requires `MANAGE_ROLES` permission.                                                                                                                                                                                         
 - ban.js - Perm-Ban requires `BAN_MEMBERS`                                                                                                                                                                                                
